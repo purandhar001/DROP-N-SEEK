@@ -1,0 +1,126 @@
+/* Main container for the Drop view */
+.drop-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* The form element itself */
+.drop-form {
+    width: 100%;
+    max-width: 500px; /* Constrain width on larger screens */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling for all labels (Message, Author name, etc.) */
+.drop-form label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+/* Styling for the large message textarea and password input */
+.drop-form textarea,
+.drop-form input[type="text"],
+.drop-form input[type="password"] {
+    background-color: transparent;
+    border: 2px solid #D90A09;
+    border-radius: 12px;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #FFF; /* White/light text for input */
+    margin-bottom: 1.5rem;
+}
+
+.drop-form textarea {
+    min-height: 120px; /* Give the message box a good height */
+    resize: vertical; /* Allow user to resize it vertically */
+}
+
+/* Specific styling for the placeholder text */
+.drop-form ::placeholder {
+    color: #D90A09;
+    opacity: 0.7;
+}
+
+/* Container for the "anonymous" checkbox and its label */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Space between checkbox and text */
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Custom styling for the checkbox itself */
+.checkbox-label input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 1.5em;
+    height: 1.5em;
+    border: 2px solid #D90A09;
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+}
+
+.checkbox-label input[type="checkbox"]::before {
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #D90A09;
+    border-radius: 2px;
+}
+
+.checkbox-label input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+/* Disables the author input when anonymous is checked */
+.drop-form input[type="text"]:disabled {
+    background-color: rgba(217, 10, 9, 0.1);
+    cursor: not-allowed;
+}
+
+
+/* --- MODIFICATION START --- */
+
+/* New container for the buttons */
+.form-footer {
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+    gap: 1rem; /* Creates space between the buttons */
+    margin-top: 1rem;
+}
+
+/* Shared styles for both buttons */
+.submit-drop-button,
+.back-button {
+    background-color: #092A3E;
+    color: #D90A09;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid #D90A09;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.submit-drop-button:hover,
+.back-button:hover {
+    background-color: #D90A09;
+    color: #092A3E;
+}
+/* --- MODIFICATION END --- */

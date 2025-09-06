@@ -1,0 +1,96 @@
+/* Main container for the homepage view */
+.homepage-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes header to top, footer to bottom */
+    align-items: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width/height */
+    overflow-y: auto; /* Allows scrolling if many drops appear */
+}
+
+/* Header section with the main title */
+.homepage-header h1 {
+    font-size: 2.5rem; /* Large, prominent title */
+    font-weight: bold;
+    color: #D90A09;
+    /* This creates the subtle red glow/outline from your mockup */
+    text-shadow: 0 0 5px rgba(217, 10, 9, 0.7);
+    margin: 0;
+}
+
+/* The list that holds all the drop items */
+.drops-list {
+    width: 100%;
+    max-width: 500px; /* Prevents the list from becoming too wide on desktops */
+    margin: 2rem 0;
+}
+
+/* Individual drop item styling */
+.drop-item {
+    background-color: #D90A09;
+    color: #092A3E; /* Dark text on the red background */
+    border: 2px solid #092A3E; /* Dark border to match the "Drop" button */
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drop-info h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 0.25rem 0;
+}
+
+.drop-info p,
+.drop-info span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* The "Find" button inside each drop item */
+.find-button {
+    background-color: #092A3E;
+    color: #D90A09;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #092A3E;
+    transition: transform 0.2s ease;
+}
+
+.find-button:hover {
+    transform: scale(1.05); /* Slight grow effect on hover */
+}
+
+/* The main "Drop" button at the bottom */
+.drop-button {
+    background-color: transparent;
+    color: #D90A09;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid #D90A09; /* Red border */
+    border-radius: 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.drop-button:hover {
+    background-color: #D90A09; /* Invert colors on hover */
+    color: #092A3E;
+}
+
+/* Message for when no drops are found */
+.no-drops-message {
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.7;
+}

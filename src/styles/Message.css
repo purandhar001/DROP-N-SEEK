@@ -1,0 +1,91 @@
+/* Main container for the Message view */
+.message-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* The main box holding the message content */
+.message-box {
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #D90A09;
+    border-radius: 12px;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* Styling for the main message paragraph */
+.message-text {
+    font-size: 1.2rem;
+    color: #ffffff; /* White text for readability */
+    line-height: 1.6;
+    margin: 0 0 2rem 0; /* Add space below the message */
+}
+
+/* The "Author" label */
+.author-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #D90A09;
+    margin: 0;
+}
+
+/* The actual author's name */
+.author-name {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 0.25rem 0 0 0;
+}
+
+/* The footer that holds the action buttons */
+.message-footer {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between; /* Pushes items to opposite ends */
+    align-items: center;
+}
+
+/* The "Back" button */
+.back-button {
+    background-color: #092A3E;
+    color: #D90A09;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid #D90A09;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #D90A09;
+    color: #092A3E;
+}
+
+/* The button for the copy icon */
+.copy-button {
+    color: #D90A09;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    position: relative; /* For positioning the feedback text */
+}
+
+.copy-button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* The text that appears after copying */
+.copied-feedback {
+    font-size: 1rem;
+    font-weight: bold;
+}

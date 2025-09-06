@@ -1,0 +1,33 @@
+/* src/index.css or src/styles/App.css */
+
+:root {
+  /* Set a base font for the entire application */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Set your primary background and text colors */
+  background-color: #092A3E;
+  color: #D90A09;
+
+  /* Improve text rendering */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  /* Remove default centering to allow our app to fill the screen */
+  min-height: 100vh;
+}
+
+/* Remove default button styles so we can style them per-component */
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
