@@ -13,12 +13,12 @@
 /* The form element itself */
 .drop-form {
     width: 100%;
-    max-width: 500px; /* Constrain width on larger screens */
+    max-width: 500px;
     display: flex;
     flex-direction: column;
 }
 
-/* Styling for all labels (Message, Author name, etc.) */
+/* Styling for all labels */
 .drop-form label {
     font-size: 1.2rem;
     font-weight: 500;
@@ -26,7 +26,7 @@
     text-align: left;
 }
 
-/* Styling for the large message textarea and password input */
+/* Styling for input fields */
 .drop-form textarea,
 .drop-form input[type="text"],
 .drop-form input[type="password"] {
@@ -36,32 +36,29 @@
     padding: 1rem;
     font-family: inherit;
     font-size: 1rem;
-    color: #FFF; /* White/light text for input */
+    color: #FFF;
     margin-bottom: 1.5rem;
 }
 
 .drop-form textarea {
-    min-height: 120px; /* Give the message box a good height */
-    resize: vertical; /* Allow user to resize it vertically */
+    min-height: 120px;
+    resize: vertical;
 }
 
-/* Specific styling for the placeholder text */
 .drop-form ::placeholder {
     color: #D90A09;
     opacity: 0.7;
 }
 
-/* Container for the "anonymous" checkbox and its label */
 .checkbox-label {
     display: flex;
     align-items: center;
-    gap: 0.75rem; /* Space between checkbox and text */
+    gap: 0.75rem;
     margin-bottom: 1.5rem;
     font-size: 1rem;
     cursor: pointer;
 }
 
-/* Custom styling for the checkbox itself */
 .checkbox-label input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
@@ -88,24 +85,18 @@
     transform: scale(1);
 }
 
-/* Disables the author input when anonymous is checked */
 .drop-form input[type="text"]:disabled {
     background-color: rgba(217, 10, 9, 0.1);
     cursor: not-allowed;
 }
 
-
-/* --- MODIFICATION START --- */
-
-/* New container for the buttons */
 .form-footer {
     display: flex;
-    justify-content: flex-end; /* Aligns buttons to the right */
-    gap: 1rem; /* Creates space between the buttons */
+    justify-content: flex-end;
+    gap: 1rem;
     margin-top: 1rem;
 }
 
-/* Shared styles for both buttons */
 .submit-drop-button,
 .back-button {
     background-color: #092A3E;
@@ -123,4 +114,27 @@
     background-color: #D90A09;
     color: #092A3E;
 }
-/* --- MODIFICATION END --- */
+
+/* --- MOBILE STYLES --- */
+@media (max-width: 600px) {
+    .drop-form label {
+        font-size: 1rem; /* Smaller labels */
+    }
+
+    .drop-form textarea,
+    .drop-form input[type="text"],
+    .drop-form input[type="password"] {
+        padding: 0.8rem; /* Less padding inside inputs */
+        font-size: 0.9rem;
+    }
+
+    .form-footer {
+        gap: 0.5rem; /* Less space between buttons */
+    }
+
+    .submit-drop-button,
+    .back-button {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem; /* Significantly less padding on buttons */
+    }
+}

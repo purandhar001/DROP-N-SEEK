@@ -17,7 +17,7 @@ const Compass = ({ setView, drop, userLocation }) => {
     const [currentTrackedLocation, setCurrentTrackedLocation] = useState(userLocation);
 
     const distance = getDistance(currentTrackedLocation.lat, currentTrackedLocation.lon, drop.lat, drop.lon);
-    const OPEN_DISTANCE = 5; // User must be within 5 meters to open
+    const OPEN_DISTANCE = 15; // User must be within 5 meters to open
     const canOpen = distance <= OPEN_DISTANCE;
 
     // --- The Core Radar Logic ---
