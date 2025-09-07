@@ -103,9 +103,11 @@ function App() {
             alert("Cannot add drop: Location not available or not signed in.");
             return;
         }
-        const { message, author, password } = newDropData;
+        // Destructure the new 'name' field from the data object
+        const { name, message, author, password } = newDropData;
         
         const docRef = await addDoc(dropsCollectionRef, {
+            name, // Save the new 'name' field to Firestore
             message,
             author,
             password: password || null,
