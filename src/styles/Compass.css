@@ -1,127 +1,73 @@
-/* Styles for the new "Heads-Up" Radar view */
-.radar-page {
+/* Styles for the map-based Compass view */
+.compass-page {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden; /* Hide anything that goes outside the screen */
+    position: relative; /* For positioning header/footer over the map */
 }
 
-.radar-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.compass-header {
     position: absolute;
     top: 1rem;
     left: 1rem;
     right: 1rem;
-    box-sizing: border-box;
-    color: #D90A09;
-    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of the map */
 }
 
-.radar-header .back-button {
-    font-size: 2rem;
+.compass-header .back-button, .distance-display {
+    background-color: rgba(9, 42, 62, 0.85); /* Semi-transparent background for readability */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: #FFF;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.compass-header .back-button {
+    font-size: 1.5rem;
     font-weight: bold;
-    color: inherit;
+    color: #D90A09;
 }
 
 .distance-display {
     font-size: 1.2rem;
     font-weight: 500;
+    color: #D90A09;
 }
 
-.radar-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.radar-circle {
-    background-color: #D90A09;
-    width: 90vw;
-    max-width: 400px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    border: 2px solid #092A3E;
-    transition: transform 0.2s linear; /* Smooth rotation of the radar */
-    position: relative;
-}
-
-/* --- NEW: Inner content div that doesn't rotate --- */
-.radar-content {
+/* The map container MUST have a defined height to be visible */
+.map-container {
     width: 100%;
     height: 100%;
-    position: relative;
+    z-index: 1; /* Position it below the header/footer */
 }
 
-.user-dot {
+/* Footer to hold the "Open" button */
+.map-footer {
     position: absolute;
-    top: 50%;
+    bottom: 2rem;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 15px;
-    height: 15px;
-    background-color: #092A3E;
-    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
 }
 
-.drop-dot {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: 3px solid #092A3E;
-    border-radius: 50%;
-    /* The dot's position transition is now handled by its style prop */
-    transition: top 0.5s ease-out, left 0.5s ease-out;
-}
-
-.radar-footer {
-    padding: 2rem 0;
-    z-index: 10;
-}
-
-.retrack-button,
-.open-drop-button {
-    background-color: transparent;
-    color: #D90A09;
-    font-size: 1.1rem;
-    font-weight: bold;
-    padding: 0.8rem 2.5rem;
-    border: 2px solid #D90A09;
-    border-radius: 12px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.retrack-button:hover,
-.open-drop-button:hover {
+.open-drop-btn {
     background-color: #D90A09;
     color: #092A3E;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 2px solid #092A3E;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    animation: pulse 1.5s infinite;
 }
 
-/* --- MOBILE STYLES --- */
-@media (max-width: 600px) {
-    .radar-header .back-button {
-        font-size: 1.5rem;
-    }
-
-    .distance-display {
-        font-size: 1rem;
-    }
-
-    .retrack-button,
-    .open-drop-button {
-        font-size: 1rem;
-        padding: 0.7rem 2rem;
-    }
+@keyframes pulse {
+    0% { transform: scale(0.98); }
+    70% { transform: scale(1); }
+    100% { transform: scale(0.98); }
 }
